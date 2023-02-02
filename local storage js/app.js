@@ -6,7 +6,7 @@ const namaInput = studentForm["nama"];
 const umurInput = studentForm["umur"];
 const beratInput = studentForm["berat"];
 
-const student = [];
+const student = JSON.parse(localStorage.getItem("student")) || [];
 
 const addStudent = (nama, umur, berat) => {
   student.push({
@@ -35,7 +35,11 @@ const createStudentElement = ({ nama, umur, berat }) => {
   // add to the DOM
   studentDiv.append(studentNama, studentUmur, studentBerat);
   studentContainer.appendChild(studentDiv);
+
+  studentContainer.style.display = student.lenght === 0 ? "none" : "block";
 };
+
+studentContainer.style.display = student.lenght === 0 ? "none" : "block";
 
 student.forEach(createStudentElement);
 
