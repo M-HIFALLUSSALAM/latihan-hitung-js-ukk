@@ -1,10 +1,13 @@
 // DOM Elements
+// untuk membuat variabel input
 
 const studentForm = document.getElementById("studentForm");
 const studentContainer = document.querySelector(".student");
 const namaInput = studentForm["nama"];
 const umurInput = studentForm["umur"];
 const beratInput = studentForm["berat"];
+
+// variabel student
 
 const student = JSON.parse(localStorage.getItem("student")) || [];
 
@@ -36,7 +39,7 @@ const createStudentElement = ({ nama, umur, berat }) => {
   studentDiv.append(studentNama, studentUmur, studentBerat);
   studentContainer.appendChild(studentDiv);
 
-  studentContainer.style.display = student.lenght === 0 ? "none" : "block";
+  studentContainer.style.display = student.lenght === 0 ? "none" : "block  ";
 };
 
 studentContainer.style.display = student.lenght === 0 ? "none" : "block";
